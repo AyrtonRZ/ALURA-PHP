@@ -19,3 +19,6 @@ echo substr($email, $posicaoDoArroba + 1) . PHP_EOL;
 //var_dump(explode(' ', $nome));
 echo "Nome: $nome" . PHP_EOL;
 echo "Sobrenome: $sobrenome" . PHP_EOL;
+
+$csv = 'Ayrton Rodrigues, 24, ayrton@gmail.com';
+var_dump(explode(',', $csv));
