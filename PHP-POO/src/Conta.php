@@ -3,23 +3,26 @@
 class Conta
 {
     //propriedades privadas nao seram alteradas livremente
-    private string $cpfTitular;
-    private string $nomeTitular;
+    private $titular;
     private float $saldo;
     //atributo da classe
     private static $numeroContas = 0;
 
     //metodo construtur
-    public function __construct(string $cpfTitular, string $nomeTitular)
+    public function __construct(Titular $titular)
     {
         //$this acessa a instacia
-        $this->cpfTitular = $cpfTitular;
-        $this->nomeTitular = $nomeTitular;
+        $this->titular = $titular;
         $this->saldo = 0;
-        $this->validaNomeTitular($nomeTitular);
-        
+    
         //os :: acessa o atributo o self pega o nome da classe
         self::$numeroContas++;
+    }
+
+    //metodo destruct
+    public function __destruct()
+    {
+        self::$numeroContas--;
     }
     //funcionalidades alterar valores
     public function sacar(float $valorSacar)
@@ -55,26 +58,17 @@ class Conta
     //funcionalidades de retorno gettres
     public function retornaCpfTitular()
     {
-        return $this->cpfTitular;
+        return $this->titular->retornaCpf(); 
     }
-
+    
     public function retornaNomeTitular()
     {
-        return $this->nomeTitular;
+        return $this->titular->retornaNome();
     }
 
     public function retornaSaldo()
     {
         return $this->saldo;
-    }
-
-    //metodo privado para verificar tamanho nome
-    private function validaNomeTitular(string $nomeTitular)
-    {
-        if(strlen($nomeTitular) < 5){
-            echo "Nome precisa de no minimo 5 caracteres.";
-            exit();
-        }
     }
 
     //metodo static, para retornar qtd de contas
@@ -89,7 +83,6 @@ class Conta
     {
         $this->cpfTitular = $cpf;
     }
-
     public function defineNomeTitular(string $nome)
     {
         $this->nomeTitular = $nome;
