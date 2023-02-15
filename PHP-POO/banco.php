@@ -15,7 +15,7 @@ echo $primeiraConta->retornaNomeTitular() . PHP_EOL;
 echo $primeiraConta->retornaCpfTitular() . PHP_EOL;
 echo $primeiraConta->retornaSaldo() . PHP_EOL;
 
-$segundaConta  = new Conta('234.444.555-12', 'Marcos Antonio');
+$segundaConta  = new Conta('234.444.555-12', 'Marc');
 $segundaConta->depositar(1500);
 $segundaConta->sacar(500);
 

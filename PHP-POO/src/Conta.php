@@ -13,6 +13,7 @@ class Conta
         $this->cpfTitular = $cpfTitular;
         $this->nomeTitular = $nomeTitular;
         $this->saldo = 0;
+        $this->validaNomeTitular($nomeTitular);
     }
     //funcionalidades alterar valores
     public function sacar(float $valorSacar)
@@ -34,6 +35,7 @@ class Conta
         $this->saldo += $valorDepositar;  
     }
 
+    //metodos para transferencia de saldo
     public function transferir(float $valorTransferir, $contaDestino)
     {
         if($valorTransferir > $this->saldo){
@@ -44,7 +46,7 @@ class Conta
         $contaDestino->depositar($valorTransferir);
     }
 
-    //funcionalidades de retorno gets
+    //funcionalidades de retorno gettres
     public function retornaCpfTitular()
     {
         return $this->cpfTitular;
@@ -58,6 +60,15 @@ class Conta
     public function retornaSaldo()
     {
         return $this->saldo;
+    }
+    
+    //metodo privado para verificar tamanho nome
+    private function validaNomeTitular(string $nomeTitular)
+    {
+        if(strlen($nomeTitular) < 5){
+            echo "Nome precisa de no minimo 5 caracteres.";
+            exit();
+        }
     }
 
     /* 
