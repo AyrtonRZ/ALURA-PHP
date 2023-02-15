@@ -6,14 +6,20 @@ class Conta
     private string $cpfTitular;
     private string $nomeTitular;
     private float $saldo;
-    
+    //atributo da classe
+    private static $numeroContas = 0;
+
     //metodo construtur
     public function __construct(string $cpfTitular, string $nomeTitular)
     {
+        //$this acessa a instacia
         $this->cpfTitular = $cpfTitular;
         $this->nomeTitular = $nomeTitular;
         $this->saldo = 0;
         $this->validaNomeTitular($nomeTitular);
+        
+        //os :: acessa o atributo o self pega o nome da classe
+        self::$numeroContas++;
     }
     //funcionalidades alterar valores
     public function sacar(float $valorSacar)
@@ -61,7 +67,7 @@ class Conta
     {
         return $this->saldo;
     }
-    
+
     //metodo privado para verificar tamanho nome
     private function validaNomeTitular(string $nomeTitular)
     {
@@ -71,6 +77,11 @@ class Conta
         }
     }
 
+    //metodo static, para retornar qtd de contas
+    public static function retornaNumeroContas()
+    {
+        return self::$numeroContas;
+    }
     /* 
     com o construct nao sera mais necessario
     //funcionalidades para definir valores em propriedades privadas sets

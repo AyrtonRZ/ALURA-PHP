@@ -10,14 +10,15 @@ $primeiraConta->sacar(50);
 $primeiraConta->defineCpfTitular('121.345.678-90');
 $primeiraConta->defineNomeTitular('Ayrton Rodrigues');
 */
-
 echo $primeiraConta->retornaNomeTitular() . PHP_EOL;
 echo $primeiraConta->retornaCpfTitular() . PHP_EOL;
 echo $primeiraConta->retornaSaldo() . PHP_EOL;
 
-$segundaConta  = new Conta('234.444.555-12', 'Marc');
+$segundaConta  = new Conta('234.444.555-12', 'Marcos');
 $segundaConta->depositar(1500);
 $segundaConta->sacar(500);
-
 var_dump($segundaConta);
 
+$terceiraConta = new Conta('123.876.909-77', 'Joao Torres');
+
+echo Conta::retornaNumeroContas();
