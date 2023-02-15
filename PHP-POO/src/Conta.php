@@ -2,27 +2,28 @@
 
 class Conta
 {
-    public string $cpfTitular;
-    public string $nomeTitular;
-    public float $saldo = 0;
+    //propriedades privadas nao seram alteradas livremente
+    private string $cpfTitular;
+    private string $nomeTitular;
+    private float $saldo = 0;
 
+    //funcionalidades alterar valores
     public function sacar(float $valorSacar)
     {
         if($valorSacar > $this->saldo){
             echo "Saldo indisponivel." . PHP_EOL;
             return;
-        } 
+        }   
         
         $this->saldo -= $valorSacar;
     }
-
+    
     public function depositar(float $valorDepositar)
     {
         if($valorDepositar < 0){
             echo "O valor precisa ser positivo." . PHP_EOL;
             return;
         }
-
         $this->saldo += $valorDepositar;  
     }
 
@@ -32,8 +33,35 @@ class Conta
             echo "Saldo Insuficiente";
             return;
         }
-
         $this->sacar($valorTransferir);
         $contaDestino->depositar($valorTransferir);
     }
+
+    //funcionalidades de retorno gets
+    public function retornaCpfTitular()
+    {
+        return $this->cpfTitular;
+    }
+
+    public function retornaNomeTitular()
+    {
+        return $this->nomeTitular;
+    }
+
+    public function retornaSaldo()
+    {
+        return $this->saldo;
+    }
+
+    //funcionalidades para definir valores em propriedades privadas sets
+    public function defineCpfTitular(string $cpf)
+    {
+        $this->cpfTitular = $cpf;
+    }
+
+    public function defineNomeTitular(string $nome)
+    {
+        $this->nomeTitular = $nome;
+    }
+
 }
