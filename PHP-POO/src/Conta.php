@@ -5,8 +5,15 @@ class Conta
     //propriedades privadas nao seram alteradas livremente
     private string $cpfTitular;
     private string $nomeTitular;
-    private float $saldo = 0;
-
+    private float $saldo;
+    
+    //metodo construtur
+    public function __construct(string $cpfTitular, string $nomeTitular)
+    {
+        $this->cpfTitular = $cpfTitular;
+        $this->nomeTitular = $nomeTitular;
+        $this->saldo = 0;
+    }
     //funcionalidades alterar valores
     public function sacar(float $valorSacar)
     {
@@ -53,6 +60,8 @@ class Conta
         return $this->saldo;
     }
 
+    /* 
+    com o construct nao sera mais necessario
     //funcionalidades para definir valores em propriedades privadas sets
     public function defineCpfTitular(string $cpf)
     {
@@ -62,6 +71,5 @@ class Conta
     public function defineNomeTitular(string $nome)
     {
         $this->nomeTitular = $nome;
-    }
-
+    }*/
 }
