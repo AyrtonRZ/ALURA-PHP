@@ -4,14 +4,12 @@ class Titular
 {
     private Cpf $cpf;
     private string $nome;
-    private Endereco $endereco;
 
-    public function __construct(Cpf $cpf, string $nome, Endereco $endereco)
+    public function __construct(Cpf $cpf, string $nome)
     {
         $this->cpf = $cpf;
         $this->nome = $nome;
         $this->validaNomeTitular($nome);
-        $this->endereco = $endereco;
     }
 
     //funcionalidades de retorno gettres
@@ -31,10 +29,5 @@ class Titular
         echo "Nome precisa de no minimo 5 caracteres.";
             exit();
         }
-    }
-
-    public function retornaEndereco()
-    {
-        return $this->endereco;
     }
 }
