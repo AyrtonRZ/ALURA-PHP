@@ -2,10 +2,10 @@
 
 class Titular
 {
-    private string $cpf;
+    private Cpf $cpf;
     private string $nome;
 
-    public function __construct(string $cpf, string $nome)
+    public function __construct(Cpf $cpf, string $nome)
     {
         $this->cpf = $cpf;
         $this->nome = $nome;
@@ -15,7 +15,7 @@ class Titular
     //funcionalidades de retorno gettres
     public function retornaCpf()
     {
-        return $this->cpf;
+        return $this->cpf->retornaNumero();
     }
     
     public function retornaNome()
