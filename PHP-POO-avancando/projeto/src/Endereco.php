@@ -15,22 +15,22 @@ class Endereco
         $this->numero = $numero;
     }
 
-    public function retornaCidade()
+    public function retornaCidade():string
     {
         return $this->cidade;
     }
 
-    public function retornaBairro()
+    public function retornaBairro():string
     {
         return $this->bairro;
     }
 
-    public function retornaRua()
+    public function retornaRua():string
     {
         return $this->rua;
     }
 
-    public function retornaNumero()
+    public function retornaNumero():string
     {
         return $this->numero;
     }

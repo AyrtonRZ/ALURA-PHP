@@ -1,9 +1,9 @@
 <?php
 
 require_once 'src/Conta.php';
+require_once 'src/Endereco.php';
 require_once 'src/Titular.php';
 require_once 'src/Cpf.php';
-require_once 'src/Endereco.php';
 
 $endereco = new Endereco('JP', 'Agua Fria', 'minha rua', '202b');
 
@@ -11,14 +11,10 @@ $ayrton = new Titular(new Cpf('123.456.789-00'), 'Ayrton Rodrigues', $endereco);
 $primeiraConta =  new Conta($ayrton);
 $primeiraConta->depositar(500);
 $primeiraConta->sacar(50);
-var_dump($primeiraConta) . PHP_EOL;
-/*
-$primeiraConta->defineCpfTitular('121.345.678-90');
-$primeiraConta->defineNomeTitular('Ayrton Rodrigues');
 
 echo $primeiraConta->retornaNomeTitular() . PHP_EOL;
 echo $primeiraConta->retornaCpfTitular() . PHP_EOL;
-echo $primeiraConta->retornaSaldo() . PHP_EOL;*/
+echo $primeiraConta->retornaSaldo() . PHP_EOL;
 
 $marcos = new Titular(new Cpf('234.444.555-12'), 'Marcos', $endereco);
 $segundaConta  = new Conta($marcos);
