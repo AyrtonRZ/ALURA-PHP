@@ -1,9 +1,15 @@
-<?php
+<?php 
 
-require_once 'src/Endereco.php';
-require_once 'src/Conta.php';
-require_once 'src/Cpf.php';
-require_once 'src/Titular.php';
+require_once 'src/Modelo/Conta/Conta.php';
+require_once 'src/Modelo/Endereco.php';
+require_once'src/Modelo/Pessoa.php';
+require_once 'src/Modelo/Conta/Titular.php';
+require_once 'src/Modelo/Cpf.php';
+
+use Alura\Banco\Modelo\Conta\Titular;
+use Alura\Banco\Modelo\Endereco;
+use Alura\Banco\Modelo\Cpf;
+use Alura\Banco\Modelo\Conta\Conta;
 
 $endereco = new Endereco('JP', 'Agua Fria', 'minha rua', '202b');
 

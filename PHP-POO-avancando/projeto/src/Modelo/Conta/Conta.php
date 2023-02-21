@@ -1,5 +1,7 @@
 <?php
 
+namespace Alura\Banco\Modelo\Conta;
+
 class Conta
 {
     //propriedades privadas nao seram alteradas livremente
