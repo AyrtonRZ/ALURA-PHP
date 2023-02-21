@@ -19,7 +19,7 @@ class Cpf
         $this->numero = $numero;
     }
 
-    public function retornaNumero()
+    public function retornaNumero():string
     {
         return $this->numero;
     }

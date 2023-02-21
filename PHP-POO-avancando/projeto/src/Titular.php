@@ -1,33 +1,18 @@
 <?php
 
-class Titular
+class Titular extends Pessoa
 {
-    private Cpf $cpf;
-    private string $nome;
+    private Endereco $endereco;
 
-    public function __construct(Cpf $cpf, string $nome)
+    public function __construct(Cpf $cpf, string $nome, Endereco $endereco)
     {
+        $this->validaNomeTitular($nome);
         $this->cpf = $cpf;
         $this->nome = $nome;
-        $this->validaNomeTitular($nome);
-    }
-
-    //funcionalidades de retorno gettres
-    public function retornaCpf()
-    {
-        return $this->cpf->retornaNumero();
     }
     
-    public function retornaNome()
+    public function retornaEndereco()
     {
-        return $this->nome;
-    }
-    //metodo privado para verificar tamanho nome
-    private function validaNomeTitular(string $nomeTitular)
-    {
-        if(strlen($nomeTitular) < 5){
-        echo "Nome precisa de no minimo 5 caracteres.";
-            exit();
-        }
+        return $this->endereco;
     }
 }
