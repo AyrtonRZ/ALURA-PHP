@@ -1,9 +1,9 @@
 <?php
 
-require_once 'src/Conta.php';
 require_once 'src/Endereco.php';
-require_once 'src/Titular.php';
+require_once 'src/Conta.php';
 require_once 'src/Cpf.php';
+require_once 'src/Titular.php';
 
 $endereco = new Endereco('JP', 'Agua Fria', 'minha rua', '202b');
 
