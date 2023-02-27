@@ -2,7 +2,7 @@
 
 namespace Alura\Banco\Modelo\Conta;
 
-class Conta
+class ContaCorrente
 {
     //propriedades privadas nao seram alteradas livremente
     private $titular;
