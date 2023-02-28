@@ -5,8 +5,8 @@ namespace Alura\Banco\Modelo\Conta;
 class Conta
 {
     //propriedades privadas nao seram alteradas livremente
-    private $titular;
-    private float $saldo;
+    private Titular $titular;
+    protected float $saldo;
     //atributo da classe
     private static $numeroContas = 0;
 
@@ -16,7 +16,6 @@ class Conta
         //$this acessa a instacia
         $this->titular = $titular;
         $this->saldo = 0;
-    
         //os :: acessa o atributo o self pega o nome da classe
         self::$numeroContas++;
     }
@@ -29,12 +28,14 @@ class Conta
     //funcionalidades alterar valores
     public function sacar(float $valorSacar)
     {
-        if($valorSacar > $this->saldo){
+        $tarifaSaque = $valorSacar * 0.05;
+        $valorSaque = $valorSacar + $tarifaSaque;
+        if($valorSaque > $this->saldo){
             echo "Saldo indisponivel." . PHP_EOL;
             return;
         }   
         
-        $this->saldo -= $valorSacar;
+        $this->saldo -= $valorSaque;
     }
     
     public function depositar(float $valorDepositar)
@@ -78,15 +79,6 @@ class Conta
     {
         return self::$numeroContas;
     }
-    /* 
-    com o construct nao sera mais necessario
-    //funcionalidades para definir valores em propriedades privadas sets
-    public function defineCpfTitular(string $cpf)
-    {
-        $this->cpfTitular = $cpf;
-    }
-    public function defineNomeTitular(string $nome)
-    {
-        $this->nomeTitular = $nome;
-    }*/
+
+
 }
