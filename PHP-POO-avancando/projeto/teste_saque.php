@@ -1,21 +1,16 @@
 <?php
 
-require_once 'src/Modelo/Conta/Conta.php';
-require_once 'src/Modelo/Conta/ContaCorrente.php';
-require_once 'src/Modelo/Conta/ContaPoupanca.php';
+require_once 'src/Model/Conta/Conta.php';
+require_once 'src/Model/Conta/ContaCorrente.php';
+require_once 'src/Model/Conta/ContaPoupanca.php';
 
-require_once 'src/Modelo/Endereco.php';
-require_once'src/Modelo/Pessoa.php';
-require_once 'src/Modelo/Conta/Titular.php';
-require_once 'src/Modelo/Cpf.php';
+require_once 'src/Model/Endereco.php';
+require_once'src/Model/Pessoa.php';
+require_once 'src/Model/Conta/Titular.php';
+require_once 'src/Model/Cpf.php';
 
-use Alura\Banco\Modelo\Conta\Titular;
-use Alura\Banco\Modelo\Endereco;
-use Alura\Banco\Modelo\Cpf;
-use Alura\Banco\Modelo\Conta\Conta;
-use Alura\Banco\Modelo\Conta\ContaCorrente;
-use Alura\Banco\Modelo\Conta\ContaPoupanca;
-use Alura\Banco\Modelo\Funcionario;
+use Alura\Banco\Modelo\Conta\{Titular, ContaCorrente, ContaPoupanca};
+use Alura\Banco\Modelo\{Endereco, Cpf};
 
 $conta1 = new ContaCorrente(
     new Titular(
