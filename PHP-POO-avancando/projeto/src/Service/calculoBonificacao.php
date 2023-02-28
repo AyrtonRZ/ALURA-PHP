@@ -9,7 +9,7 @@ class calculoBonificacao
 
     public function adicionaBonificacao(Funcionario $funcionario)
     {
-        $this->totalBonificacao += $funcionario->Bonificacao();
+        $this->totalBonificacao += $funcionario->bonificacao();
     }
     
     public function retornaTotal():float

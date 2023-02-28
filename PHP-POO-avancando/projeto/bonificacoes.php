@@ -8,6 +8,7 @@ require_once 'src/Model/Funcionario/Funcionario.php';
 require_once 'src/Model/Funcionario/Gerente.php';
 require_once 'src/Model/Funcionario/Diretor.php';
 require_once 'src/Model/Funcionario/Desenvolvedor.php';
+require_once 'src/Model/Funcionario/EditorVideo.php';
 
 use Alura\Banco\Service\calculoBonificacao;
 use Alura\Banco\Model\Funcionario\Funcionario;
@@ -16,6 +17,7 @@ use Alura\Banco\Model\Endereco;
 use Alura\Banco\Model\Funcionario\Desenvolvedor;
 use Alura\Banco\Model\Funcionario\Diretor;
 use Alura\Banco\Model\Funcionario\Gerente;
+use Alura\Banco\Model\Funcionario\EditorVideo;
 use Alura\Banco\Model\Pessoa;
 
 $desenvolvedor = new Desenvolvedor(
@@ -29,7 +31,6 @@ $desenvolvedor = new Desenvolvedor(
         'Rua',
         '103'
     ),
-    'Desenvolvedor',
     4000
 );
 $desenvolvedor->sobeNivel();
@@ -45,7 +46,6 @@ $gerente = new Gerente(
         'Rua',
         '403'
     ),
-    'Gerente',
     3000
 );
 
@@ -60,13 +60,27 @@ $diretor = new Diretor(
         'Rua',
         '403'
     ),
-    'Gerente',
     5000
+);
+
+$editor = new EditorVideo(
+    'Maria Rodrigues',
+    new Cpf(
+        '121.345.678-12'
+    ),
+    new Endereco(
+        'JP',
+        'Barrio',
+        'Rua',
+        '403'
+    ),
+    3500
 );
 
 $controlador = new calculoBonificacao();
 $controlador->adicionaBonificacao($desenvolvedor);
 $controlador->adicionaBonificacao($gerente);
 $controlador->adicionaBonificacao($diretor);
+$controlador->adicionaBonificacao($editor);
 
 echo $controlador->retornaTotal();

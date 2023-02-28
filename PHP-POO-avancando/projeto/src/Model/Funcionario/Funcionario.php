@@ -8,19 +8,12 @@ use Alura\Banco\Model\Endereco;
 
 abstract class Funcionario extends Pessoa
 {
-    private string $cargo;
     private float $salario;
 
-    public function __construct(string $nome, Cpf $cpf, Endereco $endereco, string $cargo, float $salario)
+    public function __construct(string $nome, Cpf $cpf, Endereco $endereco, float $salario)
     {
         parent::__construct($nome, $cpf, $endereco);
-        $this->cargo = $cargo;
         $this->salario = $salario;
-    }
-
-    public function retornaCargo(): string
-    {
-        return $this->cargo;
     }
 
     public function alteraNome(string $nome): void
@@ -42,9 +35,6 @@ abstract class Funcionario extends Pessoa
     {
         return $this->salario;
     }
-
-    public function bonificacao():float
-    {
-        return $this->salario * 0.1;
-    }
+    
+    abstract public function bonificacao(): float;
 }
