@@ -2,7 +2,7 @@
 
 namespace Alura\Banco\Modelo\Conta;
 
-class Conta
+abstract class Conta
 {
     //propriedades privadas nao seram alteradas livremente
     private Titular $titular;
@@ -28,7 +28,7 @@ class Conta
     //funcionalidades alterar valores
     public function sacar(float $valorSacar)
     {
-        $tarifaSaque = $valorSacar * 0.05;
+        $tarifaSaque = $valorSacar * $this->percentualTarifa();
         $valorSaque = $valorSacar + $tarifaSaque;
         if($valorSaque > $this->saldo){
             echo "Saldo indisponivel." . PHP_EOL;
@@ -45,17 +45,6 @@ class Conta
             return;
         }
         $this->saldo += $valorDepositar;  
-    }
-
-    //metodos para transferencia de saldo
-    public function transferir(float $valorTransferir, $contaDestino)
-    {
-        if($valorTransferir > $this->saldo){
-            echo "Saldo Insuficiente";
-            return;
-        }
-        $this->sacar($valorTransferir);
-        $contaDestino->depositar($valorTransferir);
     }
 
     //funcionalidades de retorno gettres
@@ -80,5 +69,5 @@ class Conta
         return self::$numeroContas;
     }
 
-
+    abstract protected function percentualTarifa():float;
 }
