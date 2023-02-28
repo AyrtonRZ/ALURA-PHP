@@ -31,7 +31,7 @@ abstract class Pessoa
         return $this->endereco;
     }
 
-    protected function validaNome(string $nome)
+    final protected function validaNome(string $nome)
     {
         if (strlen($nome) < 5) {
             echo "Nome precisa ter pelo menos 5 caracteres";

@@ -41,4 +41,10 @@ class Endereco
     {
         return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}";
     }
+
+    public function __get($nomeAtributo)
+    {
+        $metodo = 'retorna' . ucfirst($nomeAtributo);
+        return $this->$metodo;
+    }
 }

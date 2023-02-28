@@ -4,6 +4,7 @@ require_once 'src/Service/calculoBonificacao.php';
 require_once 'src/Model/Cpf.php';
 require_once 'src/Model/Endereco.php';
 require_once 'src/Model/Pessoa.php';
+require_once 'src/Model/Autenticavel.php';
 require_once 'src/Model/Funcionario/Funcionario.php';
 require_once 'src/Model/Funcionario/Gerente.php';
 require_once 'src/Model/Funcionario/Diretor.php';
@@ -11,14 +12,13 @@ require_once 'src/Model/Funcionario/Desenvolvedor.php';
 require_once 'src/Model/Funcionario/EditorVideo.php';
 
 use Alura\Banco\Service\calculoBonificacao;
-use Alura\Banco\Model\Funcionario\Funcionario;
 use Alura\Banco\Model\Cpf;
 use Alura\Banco\Model\Endereco;
 use Alura\Banco\Model\Funcionario\Desenvolvedor;
 use Alura\Banco\Model\Funcionario\Diretor;
 use Alura\Banco\Model\Funcionario\Gerente;
 use Alura\Banco\Model\Funcionario\EditorVideo;
-use Alura\Banco\Model\Pessoa;
+
 
 $desenvolvedor = new Desenvolvedor(
     'Marcos',
