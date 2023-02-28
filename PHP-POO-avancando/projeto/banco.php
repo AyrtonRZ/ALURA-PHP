@@ -12,7 +12,7 @@ use Alura\Banco\Model\Conta\Titular;
 use Alura\Banco\Model\Endereco;
 use Alura\Banco\Model\Cpf;
 use Alura\Banco\Model\Conta\Conta;
-use Alura\Banco\Model\Funcionario;
+
 
 //enderecos
 $endereco = new Endereco('JP', 'Agua Fria', 'minha rua', '202b');
