@@ -1,0 +1,21 @@
+{
+    "name": "ayrtonrz/buscador-cursos",
+    "description": "Projeto para buscar cursos do site da alura",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Ayrtonrz\\BuscadorCursos\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AyrtonRZ",
+            "email": "ayrtonrodrigues45@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.5",
+        "symfony/dom-crawler": "^6.0",
+        "symfony/css-selector": "^6.2"
+    }
+}
