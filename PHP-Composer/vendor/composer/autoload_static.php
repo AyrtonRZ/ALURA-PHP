@@ -37,6 +37,7 @@ class ComposerStaticInit34414bd083b42fe9b216009a3fac5993
         'A' => 
         array (
             'Ayrtonrz\\BuscadorCursos\\' => 24,
+            'Alura\\BuscandorDeCursos\\' => 24,
         ),
     );
 
@@ -79,6 +80,10 @@ class ComposerStaticInit34414bd083b42fe9b216009a3fac5993
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
         'Ayrtonrz\\BuscadorCursos\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Alura\\BuscandorDeCursos\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

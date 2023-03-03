@@ -16,4 +16,5 @@ return array(
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'Ayrtonrz\\BuscadorCursos\\' => array($baseDir . '/src'),
+    'Alura\\BuscandorDeCursos\\' => array($baseDir . '/src'),
 );
